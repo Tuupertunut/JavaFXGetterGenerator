@@ -1,10 +1,10 @@
-# JavaFxPropertyHelper NetBeans Plugin
+# JavaFX Getter Generator NetBeans Plugin
 
-This NetBeans plugin will help to generate get/set methods for JavaFx properties 
+This NetBeans plugin will help to generate get/set methods for JavaFX properties 
 that are contained within a POJO.
 
 The standard get/set code generator creates the following get/set methods for a 
-JavaFx property which is not ideal:
+JavaFX property which is not ideal:
 
 ```java
 private StringProperty name;
@@ -88,7 +88,6 @@ Press Alt-Insert to get the "Generate" popup menu, and select "Java FX Getter an
 
 
 Methods for supported property types will automatically be generated.
-![alt tag](https://rterp.files.wordpress.com/2015/11/nb-plugin-2.png)
 
 
 
