@@ -14,7 +14,25 @@
     </licenses>
     <build>
         <plugins>
-            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>keystore/pass.properties</file>
+                            </files>
+                            <quiet>true</quiet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
@@ -22,10 +40,11 @@
                 <extensions>true</extensions>
                 <configuration>
                     <author>Rob Terpilowski</author>
-                    <licenseName>MIT License</licenseName>                     
-                    <licenseFile>LICENSE</licenseFile> 
-                    <keystore>mykeystore</keystore> 
-                    <keystorealias>myself</keystorealias> 
+                    <licenseName>MIT License</licenseName>
+                    <licenseFile>LICENSE</licenseFile>
+                    <keystore>keystore/keystore</keystore>
+                    <keystorealias>tuupertunut</keystorealias>
+                    <keystorepassword>${keystorepass}</keystorepassword>
                 </configuration>
             </plugin>
             <plugin>
@@ -57,7 +76,7 @@
             </snapshots>
         </repository>
     </repositories>
-    <dependencies>        
+    <dependencies>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-annotations-common</artifactId>
